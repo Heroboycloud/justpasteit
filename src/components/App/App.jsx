@@ -12,7 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 // Dark mode custom
 import useDarkMode from 'use-dark-mode';
 
-const API_BASE = import.meta.env.VITE_API_URL || "https://justpasteitapi.herokuapp.com";
+const API_BASE = import.meta.env.VITE_API_URL || "";
 
 const App = () => {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const App = () => {
       toast.error("Error : Empty Text");
     } else {
       axios
-        .post(`${API_BASE}/add`, { content: shareText })
+        .post(`${API_BASE}/api/add`, { content: shareText })
         .then((response) => {
           let id = response.data["_id"];
           navigate("/" + id);

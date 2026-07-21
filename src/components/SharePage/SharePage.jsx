@@ -10,7 +10,7 @@ import xss from 'xss';
 import 'react-toastify/dist/ReactToastify.css';
 import 'highlight.js/styles/atom-one-light.css';
 
-const API_BASE = import.meta.env.VITE_API_URL || "https://justpasteitapi.herokuapp.com";
+const API_BASE = import.meta.env.VITE_API_URL || "";
 
 const SharePage = () => {
   const {id} = useParams();
@@ -36,7 +36,7 @@ const SharePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `${API_BASE}/add/${id}`
+        `${API_BASE}/api/add/${id}`
       );
 
       let text = xss(result.data['content'], options);

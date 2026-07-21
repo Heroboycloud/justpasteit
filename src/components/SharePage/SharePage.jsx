@@ -45,7 +45,7 @@ const SharePage = () => {
     };
  
     fetchData();
-  }, [data, id]);
+  }, [id]);
 
  
   const notify = () =>{

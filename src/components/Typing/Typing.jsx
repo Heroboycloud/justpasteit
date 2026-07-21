@@ -25,7 +25,8 @@ const Typing = ({ handleInputChange, onSubmit }) => {
           
           <ReactQuill modules={{
             syntax:{
-              setInterval: 10,
+              hljs,
+              interval: 1000,
             },
             toolbar: [['bold', 'italic', 'underline', 'blockquote'], [{ list: 'ordered' }, { list: 'bullet' }], ['link'], ['code-block']]
           }} className={style.textarea} theme="snow" value={value} onChange={setValue} placeholder="Start typing here!" />
